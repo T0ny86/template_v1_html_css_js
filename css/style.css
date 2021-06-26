@@ -436,3 +436,54 @@ body {
   border-color: transparent #fff transparent transparent;
 }
 /*END timeline*/
+
+/*START features*/
+.features{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.features h2{
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 60px;
+  text-align: center;
+}
+.features .feat-box{
+  width:calc(100% /3);
+  float: left;
+  text-align: center;
+  margin-bottom: 40px;
+
+}
+.features .feat-box img{
+  width: 100px;
+}
+.features .feat-box h4{
+  font-size: 22px;
+  margin: 10px 0 40px;
+  position: relative;
+}
+.features .feat-box h4::before{
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  width: 40px;
+  height: 4px;
+  left: 50%;
+  transform: translateX(-20px);
+    bottom: -15px;
+}
+
+
+.features .feat-box p{
+  padding: 0px 10px;
+  margin: 0 auto;
+  width: 80%;
+  line-height: 1.5;
+  color: #706f6f;
+}
+
+/*END features*/
+
+
