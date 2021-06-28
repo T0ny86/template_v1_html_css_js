@@ -5,7 +5,7 @@ let backgroundLocalItem = localStorage.getItem("background-option");
 
 const landingPage = document.querySelector(".landing-page");
 const imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
-const randomBG = document.querySelectorAll(".random-backgrounds span");
+const randomBG = document.querySelectorAll("#randBg .option-btns span");
 
 if (mainColor != null) {
   document.documentElement.style.setProperty("--main-color", mainColor);
@@ -25,12 +25,12 @@ if (backgroundLocalItem != null) {
   if (backgroundLocalItem === "true") {
     backgroundOption = true;
     document
-      .querySelector(".random-backgrounds span.yes")
+      .querySelector(".option-btns span.yes")
       .classList.add("active");
     randomizeImgs(); // trigger this function as default option
   } else {
     backgroundOption = false;
-    document.querySelector(".random-backgrounds .no").classList.add("active");
+    document.querySelector(".option-btns .no").classList.add("active");
   }
 }
 
@@ -48,10 +48,7 @@ colorLi.forEach((li) => {
       e.target.dataset.color
     );
     localStorage.setItem("color_option", e.target.dataset.color);
-    e.target.parentElement.querySelectorAll(".active").forEach((element) => {
-      element.classList.remove("active");
-    });
-    e.target.classList.add("active");
+    handleActiveClass(e);
   });
 });
 
@@ -59,12 +56,9 @@ colorLi.forEach((li) => {
 
 randomBG.forEach((span) => {
   span.addEventListener("click", (e) => {
-    e.target.parentElement.querySelectorAll(".active").forEach((element) => {
-      element.classList.remove("active");
-    });
-    e.target.classList.add("active");
+    handleActiveClass(e);
 
-    if (e.target.dataset.background === "true") {
+    if (e.target.dataset.btn === "true") {
       backgroundOption = true;
       localStorage.setItem("background-option", true);
       randomizeImgs(); // trigger this function as default option
@@ -136,13 +130,54 @@ ourGallery.forEach((img) => {
     closeBox.appendChild(closeButton);
 
     popupBox.appendChild(closeBox);
-
   });
 });
 
-document.addEventListener("click", (e)=>{
-  if(e.target.className == "close-box"){
+document.addEventListener("click", (e) => {
+  if (e.target.className == "close-box") {
     e.target.parentElement.remove();
     document.querySelector(".popup-overlay").remove();
   }
 });
+
+const Bullets = document.querySelectorAll(".nav-bullets .bullet");
+const Links = document.querySelectorAll(".links li a");
+
+function jumbToSmoothly(elements) {
+  elements.forEach((elm) => {
+    elm.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(e.target.dataset.section).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+}
+
+jumbToSmoothly(Bullets);
+jumbToSmoothly(Links);
+/* to handel- toggle active class  */
+function handleActiveClass(event) {
+
+  event.target.parentElement.querySelectorAll(".active").forEach((element) => {
+    element.classList.remove("active");
+  });
+  event.target.classList.add("active");
+  
+}
+
+const showBullets = document.querySelectorAll("#showBullets .option-btns span");
+//console.log(showBullets);
+
+showBullets.forEach(el =>{
+    console.log(el);
+el.addEventListener('click', e =>{
+  handleActiveClass(e);
+  if(e.target.dataset.btn === "true"){
+    document.querySelector(".nav-bullets").style.display = "block";
+      }else{
+        document.querySelector(".nav-bullets").style.display = "none";
+      }
+})
+});
+

@@ -14,6 +14,10 @@
   padding-right: 15px;
   margin: auto;
 }
+body {
+  font-family: "Open Sans", sans-serif;
+}
+/* -----START settings box----------------- */
 .settings-box {
   position: fixed;
   left: -200px;
@@ -23,6 +27,7 @@
   z-index: 1000;
   min-height: 100vh;
   transition: 0.3s;
+  border: 2px solid #eee;
 }
 .settings-box.open {
   left: 0;
@@ -86,10 +91,10 @@
   background-color: #4caf50;
 }
 
-.settings-box .random-backgrounds .yes,
-.settings-box .random-backgrounds .no {
+.settings-box .option-box .yes,
+.settings-box .option-box .no {
   width: 50px;
-  background-color: #009688;
+  background-color: var(--main-color);
   color: #fff;
   margin-top: 10px;
   display: inline-block;
@@ -100,15 +105,59 @@
   opacity: 0.5;
   cursor: pointer;
 }
-.settings-box .random-backgrounds span.active {
+.settings-box .option-box span.active {
   opacity: 1;
 }
+/* -----END settings box----------------- */
 
-/* -----ens settings box----------------- */
-body {
-  font-family: "Open Sans", sans-serif;
+/* -----START nav bullets----------------- */
+.nav-bullets{
+  position: fixed;
+  right: 0;
+  top:50%;
+  transform: translateY(-50%);
+  width: 40px;
+  z-index: 1200;
 }
+.nav-bullets .bullet{
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--main-color);
+  margin: 20px auto;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+.nav-bullets .bullet:hover .tooltip{
+  display: block;
+  }
+.nav-bullets .bullet .tooltip{
+  position: absolute;
+  width: 100px;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 4px 10px;
+  right: 32px;
+  top: -6px;
+  text-align: center;
+  cursor:default;
+  pointer-events: none;
+  display: none;
+}
+.nav-bullets .bullet .tooltip::before{
+  content: '';
+  width: 0;
+  height: 0;
+  border: 13px solid;
+  position: absolute;
+  right: -26px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-color: transparent transparent transparent var(--main-color);
+}
+/* -----END nav bullets----------------- */
 
+/* -----START landing-page----------------- */
 .landing-page {
   min-height: 100vh;
   background-image: url("../imgs/02.jpg");

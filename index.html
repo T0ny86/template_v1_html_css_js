@@ -14,8 +14,8 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- setting box-->
-
+    <!--START setting box-->
+    
     <div class="settings-box">
       <div class="toggle-settings">
         <i class="fa fa-gear"></i>
@@ -31,26 +31,52 @@
             <li data-color="#4caf50"></li>
           </ul>
         </div>
-        <div class="option-box">
+        <div class="option-box" id="randBg">
           <h4>Random Background</h4>
-          <div class="random-backgrounds">
-            <span class="yes active" data-background="true">Yes</span>
-            <span class="no" data-background="false">No</span>
+          <div class="option-btns">
+            <span class="yes active" data-btn="true">Yes</span>
+            <span class="no" data-btn="false">No</span>
+          </div>
+        </div>
+        <div class="option-box" id="showBullets">
+          <h4>Show Bullets</h4>
+          <div class="option-btns">
+            <span class="yes active" data-btn="true">Yes</span>
+            <span class="no" data-btn="false">No</span>
           </div>
         </div>
       </div>
     </div>
-    <!-- start landing page-->
+    <!--END setting box-->
+    
+    <!-- START nav bullets-->
+      <div class="nav-bullets">
+        <div class="bullet" data-section=".about-us">
+          <div class="tooltip">About Us</div>
+        </div>
+        <div class="bullet" data-section=".skills">
+          <div class="tooltip">Our Skills</div>
+        </div>
+        <div class="bullet" data-section=".gallery">
+          <div class="tooltip">Gallery</div>
+        </div>
+        <div class="bullet" data-section=".timeline">
+          <div class="tooltip">Timeline</div>
+        </div>
+      </div>
+    <!--END nav bullets-->
+
+    <!-- START landing page-->
     <div class="landing-page">
       <div class="overlay"></div>
       <div class="container">
         <div class="header-area">
           <div class="logo">LP Design</div>
           <ul class="links">
-            <li><a href="#" class="active">About </a></li>
-            <li><a href="#">Service </a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact </a></li>
+            <li><a href="#" data-section=".about-us">About </a></li>
+            <li><a href="#" data-section=".skills">Skills </a></li>
+            <li><a href="#" data-section=".gallery">Gallery</a></li>
+            <li><a href="#" data-section=".timeline">Timeline </a></li>
           </ul>
         </div>
       </div>
