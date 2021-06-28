@@ -610,13 +610,42 @@ body {
   cursor: pointer;
 }
 .contact form input:not([type="submit"]):focus::-webkit-input-placeholder,
-.contact form textarea:focus::-webkit-input-placeholder{
+.contact form textarea:focus::-webkit-input-placeholder {
   opacity: 0;
-  transition: .3s;
+  transition: 0.3s;
 }
 .contact form input:not([type="submit"]):focus::-moz-placeholder,
-.contact form textarea:focus::-moz-placeholder{
+.contact form textarea:focus::-moz-placeholder {
   opacity: 0;
-  transition: .3s;
+  transition: 0.3s;
 }
 /* END contact form*/
+
+/* START responsive  grid: */
+@media (min-width: 576px) {
+  /* for small devices*/
+  .container {
+    max-width: 549px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* for medium devices*/
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* for dektop devices*/
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* for large screen devices*/
+  .container {
+    max-width: 1140px;
+  }
+}
