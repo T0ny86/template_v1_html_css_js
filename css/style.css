@@ -111,15 +111,15 @@ body {
 /* -----END settings box----------------- */
 
 /* -----START nav bullets----------------- */
-.nav-bullets{
+.nav-bullets {
   position: fixed;
   right: 0;
-  top:50%;
+  top: 50%;
   transform: translateY(-50%);
   width: 40px;
   z-index: 1200;
 }
-.nav-bullets .bullet{
+.nav-bullets .bullet {
   width: 20px;
   height: 20px;
   border: 3px solid var(--main-color);
@@ -128,10 +128,10 @@ body {
   cursor: pointer;
   position: relative;
 }
-.nav-bullets .bullet:hover .tooltip{
+.nav-bullets .bullet:hover .tooltip {
   display: block;
-  }
-.nav-bullets .bullet .tooltip{
+}
+.nav-bullets .bullet .tooltip {
   position: absolute;
   width: 100px;
   background-color: var(--main-color);
@@ -140,12 +140,12 @@ body {
   right: 32px;
   top: -6px;
   text-align: center;
-  cursor:default;
+  cursor: default;
   pointer-events: none;
   display: none;
 }
-.nav-bullets .bullet .tooltip::before{
-  content: '';
+.nav-bullets .bullet .tooltip::before {
+  content: "";
   width: 0;
   height: 0;
   border: 13px solid;
@@ -429,7 +429,7 @@ body {
 }
 
 .timeline .timeline-content .left::before {
-  right: -32px; 
+  right: -32px;
 }
 .timeline .timeline-content .right::before {
   left: -32px;
@@ -461,11 +461,11 @@ body {
   margin: 0;
   line-height: 1.5;
 }
-.clearFix{
+.clearFix {
   clear: both;
 }
-.timeline .timeline-content .left .content::after{
-  content: '';
+.timeline .timeline-content .left .content::after {
+  content: "";
   border: 12px solid;
   position: absolute;
   top: 16px;
@@ -474,8 +474,8 @@ body {
   right: -24px;
   border-color: transparent transparent transparent #fff;
 }
-.timeline .timeline-content .right .content::after{
-  content: '';
+.timeline .timeline-content .right .content::after {
+  content: "";
   border: 12px solid;
   position: absolute;
   top: 16px;
@@ -487,33 +487,32 @@ body {
 /*END timeline*/
 
 /*START features*/
-.features{
+.features {
   padding-top: 80px;
   padding-bottom: 80px;
 }
-.features h2{
+.features h2 {
   font-weight: bold;
   font-size: 30px;
   color: var(--main-color);
   margin: 0 0 60px;
   text-align: center;
 }
-.features .feat-box{
-  width:calc(100% /3);
+.features .feat-box {
+  width: calc(100% / 3);
   float: left;
   text-align: center;
   margin-bottom: 40px;
-
 }
-.features .feat-box img{
+.features .feat-box img {
   width: 100px;
 }
-.features .feat-box h4{
+.features .feat-box h4 {
   font-size: 22px;
   margin: 10px 0 40px;
   position: relative;
 }
-.features .feat-box h4::before{
+.features .feat-box h4::before {
   content: "";
   position: absolute;
   background-color: var(--main-color);
@@ -521,11 +520,10 @@ body {
   height: 4px;
   left: 50%;
   transform: translateX(-20px);
-    bottom: -15px;
+  bottom: -15px;
 }
 
-
-.features .feat-box p{
+.features .feat-box p {
   padding: 0px 10px;
   margin: 0 auto;
   width: 80%;
@@ -534,5 +532,91 @@ body {
 }
 
 /*END features*/
+.goTop {
+  position: fixed;
+  width: 30px;
+  right: 25px;
+  bottom: 25px;
+  z-index: 2000;
+  cursor: pointer;
+  background-color: var(--main-color);
+}
 
-
+/* START contact form*/
+.contact {
+  min-height: 600px;
+  background-image: url(../imgs/wolrdmap.png);
+  background-size: cover;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.contact .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(247 247 247 / 75%);
+}
+.contact .container {
+  position: relative;
+  z-index: 10;
+}
+.contact h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 60px;
+  text-align: center;
+}
+.contact form {
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
+}
+.contact form .left {
+  float: left;
+  width: 49%;
+}
+.contact form .right {
+  float: right;
+  width: 49%;
+}
+.contact form input:not([type="submit"]),
+.contact form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background-color: rgba(218 218 218 / 45%);
+}
+.contact form input:not([type="submit"]):focus,
+.contact form textarea:focus {
+  outline: 1px solid var(--main-color);
+}
+.contact form input {
+  height: 40px;
+}
+.contact form textarea {
+  height: 150px;
+}
+.contact form input[type="submit"] {
+  width: 100%;
+  border: transparent;
+  padding: 10px;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+.contact form input:not([type="submit"]):focus::-webkit-input-placeholder,
+.contact form textarea:focus::-webkit-input-placeholder{
+  opacity: 0;
+  transition: .3s;
+}
+.contact form input:not([type="submit"]):focus::-moz-placeholder,
+.contact form textarea:focus::-moz-placeholder{
+  opacity: 0;
+  transition: .3s;
+}
+/* END contact form*/

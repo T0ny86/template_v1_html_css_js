@@ -24,9 +24,7 @@ randomBG.forEach((element) => {
 if (backgroundLocalItem != null) {
   if (backgroundLocalItem === "true") {
     backgroundOption = true;
-    document
-      .querySelector(".option-btns span.yes")
-      .classList.add("active");
+    document.querySelector(".option-btns span.yes").classList.add("active");
     randomizeImgs(); // trigger this function as default option
   } else {
     backgroundOption = false;
@@ -156,28 +154,53 @@ function jumbToSmoothly(elements) {
 
 jumbToSmoothly(Bullets);
 jumbToSmoothly(Links);
+
 /* to handel- toggle active class  */
 function handleActiveClass(event) {
-
   event.target.parentElement.querySelectorAll(".active").forEach((element) => {
     element.classList.remove("active");
   });
   event.target.classList.add("active");
-  
 }
 
-const showBullets = document.querySelectorAll("#showBullets .option-btns span");
-//console.log(showBullets);
+/* to handel- toggle show/hide bullets  */
+const showBulletsBtn = document.querySelectorAll(
+  "#showBullets .option-btns span"
+);
+const bulletsContainer = document.querySelector(".nav-bullets");
+let bulletLocalStorage = localStorage.getItem("bullets_option");
 
-showBullets.forEach(el =>{
-    console.log(el);
-el.addEventListener('click', e =>{
-  handleActiveClass(e);
-  if(e.target.dataset.btn === "true"){
-    document.querySelector(".nav-bullets").style.display = "block";
-      }else{
-        document.querySelector(".nav-bullets").style.display = "none";
-      }
-})
+if (bulletLocalStorage != null) {
+  showBulletsBtn.forEach(span =>{
+    span.classList.remove("active");
+  });
+
+  if (bulletLocalStorage === "block") {
+    bulletsContainer.style.display = "block";
+    document.querySelector("#showBullets .option-btns .yes").classList.add("active");
+  } else {
+    bulletsContainer.style.display = "none";
+    document.querySelector("#showBullets .option-btns .no").classList.add("active");
+  }
+}
+
+
+showBulletsBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    handleActiveClass(e);
+
+    if (e.target.dataset.btn === "true") {
+      bulletsContainer.style.display = "block";
+      localStorage.setItem("bullets_option", "block");
+    } else {
+      bulletsContainer.style.display = "none";
+      localStorage.setItem("bullets_option", "none");
+    }
+  });
 });
 
+document.querySelector(".goTop").onclick = ()=>{
+  document.querySelector(".landing-page").scrollIntoView({
+    behavior:"smooth"
+  })
+}
