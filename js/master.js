@@ -204,3 +204,24 @@ document.querySelector(".goTop").onclick = ()=>{
     behavior:"smooth"
   })
 }
+
+/* hamburger menu */
+const menuBtn = document.querySelector(".toggle-menu");
+const tLinks = document.querySelector(".links");
+
+menuBtn.onclick= (e)=>{
+  e.stopPropagation();
+  menuBtn.classList.toggle("menu-active");
+  tLinks.classList.toggle("open");
+  console.log(tLinks.className);
+}
+tLinks.onclick= (e)=>{
+  e.stopPropagation();
+}
+
+document.addEventListener("click", (e)=>{
+if (e.target != menuBtn && e.target != tLinks) {
+  tLinks.classList.remove("open");
+  menuBtn.classList.remove("menu-active");
+}
+});

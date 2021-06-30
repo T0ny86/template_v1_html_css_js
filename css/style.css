@@ -205,7 +205,7 @@ body {
 }
 
 .header-area .links li a {
-  color: #ffff;
+  color: #fff;
   text-decoration: none;
   outline: none;
 }
@@ -215,7 +215,7 @@ body {
   color: var(--main-color);
   transition: 0.3s; /* make smothe transition */
 }
-.header-area .toggle-menu{
+.header-area .toggle-menu {
   border: none;
   background: none;
   width: 45px;
@@ -223,13 +223,26 @@ body {
   cursor: pointer;
   margin-top: 15px;
   display: none;
+  position: relative;
+  float: right;
 }
-.header-area .toggle-menu:focus span{
-  background-color: var(--main-color);
-  transition: .3s;
+/* .menu-active, just pseudo class
+ to hide/show the small triangle, with js toggleClass*/
+.header-area .toggle-menu.menu-active::before {
+  content: "";
+  position: absolute;
+  border: 10px solid;
+  border-color: transparent transparent #fff transparent;
+  bottom: -15px;
+  left: 10px;
 }
 
-.header-area .toggle-menu span{
+.header-area .toggle-menu:focus span {
+  background-color: var(--main-color);
+  transition: 0.3s;
+}
+
+.header-area .toggle-menu span {
   display: block;
   background-color: #fff;
   margin-bottom: 4px;
@@ -658,14 +671,36 @@ body {
     max-width: 720px;
   }
 }
-@media (max-width:991px){
-  .header-area .links{
+@media (max-width: 991px) {
+  .header-area .links {
     display: none;
   }
+  
+  .header-area .links.open {
+    background-color: #fff;
+    padding: 10px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+
+  }
+  .header-area .links.open li {
+    display: block;
+    margin: 10px;
+  }
+  .header-area .links.open li a {
+    color: var(--main-color);
+    font-weight: bold;
+  }
   .header-area .toggle-menu{
-    display: inline-block;
+    display: block;
   }
 }
+
 @media (min-width: 992px) {
   /* for dektop devices*/
   .container {
