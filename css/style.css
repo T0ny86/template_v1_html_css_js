@@ -663,29 +663,7 @@ body {
 /* END contact form*/
 
 /* START responsive  grid: */
-@media (max-width: 575px){
-  .interoduction-text h1{
-    font-size: 26px;;
-  }
-  .about-us{
-    display: block;
-    text-align: center;
-  }
-  .about-us .info-box{
-    padding: 0;
-  }
-  .skills .skill-box{
-    display: block;
-  }
-  .skills .skill-box .skill-name {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 14px;
-}
-.skills .skill-box .skill-progress {
-  height: 25px;
-}
-}
+
 @media (min-width: 576px) {
   /* for small devices*/
   .container {
@@ -693,12 +671,32 @@ body {
   }
 }
 
+
 @media (min-width: 768px) {
   /* for medium devices*/
   .container {
     max-width: 720px;
   }
 }
+
+
+@media (min-width: 992px) {
+  /* for dektop devices*/
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* for large screen devices*/
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* ================*/
+
+
 @media (max-width: 991px) {
   .header-area .links {
     display: none;
@@ -727,18 +725,59 @@ body {
   .header-area .toggle-menu{
     display: block;
   }
-}
 
-@media (min-width: 992px) {
-  /* for dektop devices*/
-  .container {
-    max-width: 960px;
+  /* feature div */
+  .features .feat-box {
+    width: calc(100% / 2);
   }
 }
 
-@media (min-width: 1200px) {
-  /* for large screen devices*/
-  .container {
-    max-width: 1140px;
+@media (max-width: 767px) {
+  /* cancel left-right alignment, replaced with center adjustment  */
+  .timeline .timeline-content .left,
+  .timeline .timeline-content .right {
+    width: 100%;
+    margin-bottom: 20px;
   }
+  /* hide arrows from timeline boxes*/
+.timeline .timeline-content .left::before ,
+.timeline .timeline-content .right::before,
+.timeline .timeline-content .left .content::after,
+.timeline .timeline-content .right .content::after   {
+  display: none;
+}
+
+.contact form .right,
+.contact form .left{
+float: none;
+width: 100%;
+}
+}
+
+
+@media (max-width: 575px){
+  .interoduction-text h1{
+    font-size: 26px;;
+  }
+  .about-us{
+    display: block;
+    text-align: center;
+  }
+  .about-us .info-box{
+    padding: 0;
+  }
+  .skills .skill-box{
+    display: block;
+  }
+  .skills .skill-box .skill-name {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 14px;
+}
+.skills .skill-box .skill-progress {
+  height: 25px;
+}
+.features .feat-box {
+  width: 100%;
+}
 }
