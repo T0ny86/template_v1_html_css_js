@@ -213,7 +213,7 @@ menuBtn.onclick= (e)=>{
   e.stopPropagation();
   menuBtn.classList.toggle("menu-active");
   tLinks.classList.toggle("open");
-  console.log(tLinks.className);
+
 }
 tLinks.onclick= (e)=>{
   e.stopPropagation();
