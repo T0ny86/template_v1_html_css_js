@@ -577,7 +577,7 @@ body {
   position: fixed;
   width: 30px;
   right: 25px;
-  bottom: 25px;
+  bottom: 50px;
   z-index: 2000;
   cursor: pointer;
   background-color: var(--main-color);
@@ -661,6 +661,15 @@ body {
   transition: 0.3s;
 }
 /* END contact form*/
+
+/* START footer*/
+.footer{
+  background-color: #333;
+  color: #eee;
+  padding: 20px;
+  text-align: center;
+}
+/* END footer*/
 
 /* START responsive  grid: */
 
